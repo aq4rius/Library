@@ -6,7 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <h1>LIBRARY</h1>
+    <button class="button open-button">Add New Book</button>
+    <dialog class="modal" id="modal">
+      <h2>Add new Book</h2>
+      <form class="form" method="dialog">
+        <label>Title <input type="text" id="title" required /></label>
+        <label>Author <input type="text" id="author" required /></label>
+        <label>Pages <input type="number" id="pages" /></label>
+        <label
+          >Read?
+          <input
+            type="radio"
+            id="not-read"
+            name="ifread"
+            value="no"
+            required
+          /><label for="not-read">NO</label>
+          <input type="radio" id="read" name="ifread" value="yes" /><label
+            for="read"
+            >YES</label
+          >
+        </label>
+        <button type="button" class="button close-button">Cancel</button>
+        <button class="button" type="submit">Add Book</button>
+      </form>
+    </dialog>
+    <main class="container"></main>
+  </body>
 </html>

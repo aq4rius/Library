@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  /* margin: 0; */
+}
+
+body {
+  background-color: #5dacbd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background-color: #24527a;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.deleteButton {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.ifReadButton {
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.container {
+  width: 80%;
+  background-color: #a7bcb9;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  min-height: 130px;
+  margin: 20px;
+}
+
+.empty-message {
+  margin: 10px;
+  display: grid;
+  grid-column: 5 span;
+}
+
+.book-card {
+  border-radius: 10px;
+  background-color: #e0ebeb;
+  display: grid;
+  border: 1px solid black;
+  min-height: 200px;
+  min-width: 150px;
+  margin: 10px;
+}
+
+.book-card > p {
+  margin: 5px;
+}
+
+.modal {
+  background-color: #e0ebeb;
+  padding: 1em;
+  max-width: 50ch;
+  border: 0;
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+}
+
+.modal::backdrop {
+  background: rgb(0 0 0 / 0.4);
+}
+
+form {
+  display: grid;
+  gap: 1em;
+}
