@@ -53,10 +53,6 @@ Book.prototype.toggleIfRead = function () {
   displayBooks(myLibrary);
 };
 
-// const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, "no");
-
-// const starWars = new Book("Star Wars", "George Lucas", 512, "yes");
-
 function deleteBook(event) {
   if (event.target.classList.contains("deleteButton")) {
     const index = event.target.getAttribute("data");
@@ -123,3 +119,11 @@ function displayBooks(arr) {
     div.appendChild(deleteBook);
   }
 }
+
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, "no");
+
+const starWars = new Book("Star Wars", "George Lucas", 512, "yes");
+
+myLibrary.push(starWars);
+myLibrary.push(theHobbit);
+displayBooks(myLibrary);
