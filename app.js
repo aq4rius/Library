@@ -21,7 +21,7 @@ closeModal.addEventListener("click", () => {
   modal.close();
 });
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", () => {
   addBookToLibrary();
   displayBooks(myLibrary);
 });
@@ -37,21 +37,23 @@ bookContainer.addEventListener("click", (event) => {
   }
 });
 
-function Book(title, author, pages, ifread) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.ifread = ifread;
-}
-
-Book.prototype.toggleIfRead = function () {
-  if (this.ifread === "no") {
-    this.ifread = "yes";
-  } else if (this.ifread === "yes") {
-    this.ifread = "no";
+class MyBooks {
+  constructor(title, author, pages, ifread) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.ifread = ifread;
   }
-  displayBooks(myLibrary);
-};
+
+  toggleIfRead() {
+    if (this.ifread === "no") {
+      this.ifread = "yes";
+    } else if (this.ifread === "yes") {
+      this.ifread = "no";
+    }
+    displayBooks(myLibrary);
+  }
+}
 
 function deleteBook(event) {
   if (event.target.classList.contains("deleteButton")) {
@@ -76,7 +78,7 @@ function addBookToLibrary() {
   let bookAuthor = author.value;
   let bookPages = pages.value;
   let bookIfread = ifread.value;
-  const newBook = new Book(bookTitle, bookAuthor, bookPages, bookIfread);
+  const newBook = new MyBooks(bookTitle, bookAuthor, bookPages, bookIfread);
   myLibrary.push(newBook);
 }
 
@@ -120,9 +122,9 @@ function displayBooks(arr) {
   }
 }
 
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, "no");
+const theHobbit = new MyBooks("The Hobbit", "J.R.R. Tolkien", 295, "no");
 
-const starWars = new Book("Star Wars", "George Lucas", 512, "yes");
+const starWars = new MyBooks("Star Wars", "George Lucas", 512, "yes");
 
 myLibrary.push(starWars);
 myLibrary.push(theHobbit);
